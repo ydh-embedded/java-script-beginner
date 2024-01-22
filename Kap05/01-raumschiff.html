@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Objekte, Eigenschaften und Methoden</title>
+</head>
+
+<body>
+  <h3>Anlegen zweier Objekte des Konstruktors Raumschiff</h3>
+  <script>
+
+    function Raumschiff(name, modell) {
+      this.name = name;
+      this.modell = modell;
+    }
+
+    /* Hier Objekte erzeugen */
+    let enterprise = new Raumschiff("U.S.S. Enterprise", "NCC-1701");
+    let voyager = new Raumschiff("U.S.S. Voyager", "NCC-74656");
+
+    document.write("<br>", enterprise.name, ", Modell: ", enterprise.modell);
+    document.write("<br>", voyager.name, ", Modell: ", voyager.modell);
+
+  </script>
+</body>
+
+</html>

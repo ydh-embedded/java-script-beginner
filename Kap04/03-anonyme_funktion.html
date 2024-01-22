@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Funktion in Ausdrücken definieren</title>
+</head>
+<body>
+<pre>
+     var quadrat = function (zahl) { return zahl * zahl; }
+     document.write(quadrat(10));
+
+     function tueEtwas(f)
+     {
+       return f(10);
+     }
+
+     document.write(tueEtwas(function(value) { return value * value; }));
+     document.write(tueEtwas(quadrat));
+</pre>
+
+
+<p><u>Ergebnis:</u></p>
+
+    <script>
+
+     var quadrat = function (zahl) { return zahl * zahl; }
+     document.write(quadrat(10) + "<br>");
+
+     function tueEtwas(f)
+     {
+       return f(10);
+     }
+
+     document.write(tueEtwas(function(value) { return value * value; }) + "<br>");
+     document.write(tueEtwas(quadrat));
+
+    </script>
+  </body>
+</html>

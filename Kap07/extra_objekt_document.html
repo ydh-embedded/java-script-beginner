@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Objekt: document</title>
+</head>
+<body>
+  <h3>Alle Eigenschaften des document-Objekts</h3>
+  <script type="text/javascript">
+      document.write("<table>");
+      for(var eig in document)
+        document.write("<tr><td>" + eig + ":<\/td><td> " + document[eig] + "<\/td>");
+      document.write("<\/table>");
+  </script>
+</body>
+</html>
