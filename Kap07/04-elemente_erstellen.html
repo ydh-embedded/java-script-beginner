@@ -13,7 +13,21 @@
   <script>
 
 	// ! Hier Script eintragen
-    
+    let bildquelle = document.createAttribute("src");
+    bildquelle.nodeValue = "images/b1.jpg"          ;
+
+    let alternatictext = document.createAttribute("alt")  ;
+    alternatictext.nodeValue = "Am Fluss"                 ;
+
+    /* Bild Element erzeugen */
+    let b1 = document.createElement('img')           
+          ;
+    /* Dem Bild Eleemnt die attributeknoten zuweisen */
+    b1.setAttributeNode(bildquelle)           ;
+    b1.setAttributeNode(alternativetext)      ;
+
+
+
   </script>
 </body>
 

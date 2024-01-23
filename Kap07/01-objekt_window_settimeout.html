@@ -16,6 +16,17 @@
     
 	// ! Hier Script eintragen
 
+    window.setTimeout( zeitVorbei , 5000 )  ;
+
+    let i = 0 ;
+    function Countdown ( i ){
+      if ( i >= 0 ){
+        i--   ;
+        document.write(i , '<br>' )   ;
+        setTimeout(Countdown , 1000 ) ;
+      }
+    }
+
   </script>
 </body>
 </html>
