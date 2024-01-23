@@ -1,0 +1,82 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Javascript übungen": {
+		"scope": "html,javascript,typescript",
+		"prefix": "jsu",
+		"body": [
+						"<!DOCTYPE html>",
+						"<html lang=\"de\">",
+						"<head>",
+  					"\t<meta charset=\"UTF-8\">",
+  					"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+  					"\t<title>${1:Übung }</title>",
+			  		"<link rel=\"stylesheet\" href=\"${2:js4.css}\">",
+						"</head>",
+						"<body>\n",
+
+ 						"\t<h1>${1:Übung }</h1>\n",
+
+  					"\t<p id=\"ausgabe\"></p>\n",
+  
+  					"\t<script>\n",
+
+						"\t\t$3\n",
+
+    				"\t\tdocument.getElementById(\"ausgabe\").innerHTML = \"Ausgabe\";\n",
+
+		  			"\t</script>\n",
+
+			"</body>",
+			"</html>"
+		],
+		"description": "Vorlage für JavaScript Übungen"
+	},
+
+
+	"Javascript code": {
+		"scope": "html,javascript,typescript",
+		"prefix": "jsc",
+		"body": [
+						"<!DOCTYPE html>",
+						"<html lang=\"de\">",
+						"<head>",
+  					"\t<meta charset=\"UTF-8\">",
+  					"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+  					"\t<title>${1:JavaScript}</title>",
+			  		"<link rel=\"stylesheet\" href=\"${2:js4.css}\">",
+						"</head>",
+						"<body>\n",
+
+ 						"\t<h1>${1:JavaScript}</h1>\n",
+
+  					"\t<p id=\"ausgabe\"></p>\n",
+  
+  					"\t<script>\n",
+
+						"\t\t$3\n",
+
+		  			"\t</script>\n",
+
+			"</body>",
+			"</html>"
+		],
+		"description": "Vorlage für JavaScript Code"
+	}
+
+
+}
