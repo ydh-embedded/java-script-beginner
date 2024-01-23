@@ -15,6 +15,15 @@
       this.modell = modell;
       this.entfernung = 0;
       /* Hier Methode einfügen */
+      this.zurueck = function (lichtjahre){
+        this.entfernung -= lichtjahre;
+
+        if(this.entfernung > 0){
+          document.write(this.name + " ")
+        }
+      }
+
+
       this.entfernen = (lichtjahre) => {
         this.entfernung += lichtjahre;
         document.write(this.name + " => Aktuelle Reise: " + lichtjahre + " Lichtjahre -> Erdentfernung: " + this.entfernung + " Lichtjahre<br>");
