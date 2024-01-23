@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html><html lang="de">
+<head>
+   <meta charset="utf-8">
+   <title>Übung, Klasse</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      class Rechteck
+      {
+         constructor(x, y, b, h)
+         {
+            this.xpos = x;
+            this.ypos = y;
+            this.breite = b;
+            this.hoehe = h;
+         }
+
+         verbreitern(db)
+         {
+            this.breite += db;
+         }
+
+         erhoehen(dh)
+         {
+            this.hoehe += dh;
+         }
+
+         skalieren(f)
+         {
+            this.breite *= f;
+            this.hoehe *= f;
+         }
+
+         verschieben(dx, dy)
+         {
+            this.xpos += dx;
+            this.ypos += dy;
+         }
+
+         toString()
+         {
+            return "Ort: " + this.xpos + "/" + this.ypos + ", Größe: " + this.breite + "/" + this.hoehe;
+         }
+      }
+   </script>
+</head>
+<body><p>
+   <script>
+      const rEins = new Rechteck(50, 10, 100, 200);
+      document.write(rEins + "<br>");
+      rEins.verbreitern(50);
+      document.write(rEins + "<br>");
+      rEins.erhoehen(20);
+      document.write(rEins + "<br>");
+      rEins.skalieren(1.5);
+      document.write(rEins + "<br>");
+      rEins.verschieben(20, 80);
+      document.write(rEins);
+   </script></p>
+</body>
+</html>
