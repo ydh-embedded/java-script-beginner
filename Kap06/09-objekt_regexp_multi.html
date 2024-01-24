@@ -14,8 +14,8 @@
 
     document.write(Text + "<br><br>Die Bestellwerte im einzeln:<br><hr />");
 
-    var Suchmuster = new RegExp(/\d*\.\d{2}€/g);
-    Bestellwerte = Text.match(Suchmuster);
+    var Suchmuster = new RegExp(/\d+\.\d{2}€/i);
+    var Bestellwerte = Text.match(Suchmuster);
 
     for (var i = 0; i < Bestellwerte.length; i++)
       document.write(Bestellwerte[i] + "<br>");

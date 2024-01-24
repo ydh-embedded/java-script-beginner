@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video mit JavaScript steuern</title>
+    <style>
+        video {width: 460px;}
+
+        #playerControls {
+            margin: 50px 0;
+        }
+
+        #playerControls > div {
+            margin-bottom: 50px;
+        }
+
+        #playerControls > span {
+            font-size: 3rem;
+            margin-right: 20px;
+            background-color: #333;
+            padding: 20px;
+            line-height: 0;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: #fff;
+        }
+        #playerControls > span:hover {cursor:pointer;}
+    </style>
+</head>
+<body>
+    <h1>Video mit JavaScript steuern</h1>
+
+    <video preload="metadata" playsinline id="video" controls>
+        <source src="../video/mm.ogv" type="video/ogv">
+        <source src="../video/mm.mp4" type="video/mp4">
+    </video>
+
+    <div id="playerControls">
+        <div>
+            aktuelle Zeit: <span id="played">0:00</span> / Dauer: <span id="toend"></span><br>
+           <br>
+            <input type="range" id="rangeLine" value="0">
+        </div>
+
+        <span id="play">&gt;</span>
+        <span id="pause">||</span>
+        <span id="rewind">|&lt;</span>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            with (document) {
+                const video = querySelector("#video");
+                const play = querySelector("#play");
+                const pause = querySelector("#pause");
+                const rewind = querySelector("#rewind");
+                const rangeLine = querySelector("#rangeLine");
+            }
+
+            play.addEventListener("click", ()=>{
+                video.play();
+            });
+            pause.addEventListener("click", ()=>{
+                video.pause();
+            });
+            rewind.addEventListener("click", ()=>{
+                video.currentTime = 0;
+            });
+
+            video.addEventListener("loadedmetadata", ()=>{
+                const duration = video.duration.toFixed(1);
+                const m = Math.floor(duration / 60, 0) + ":" + (Math.floor(duration, 0) - 60);
+                document.querySelector("#toend").innerHTML = m;
+            });
+
+            video.addEventListener("timeupdate", ()=>{
+                const played = video.currentTime;
+                // const playedTime = Math.floor(video.currentTime / 60, 0) + ":" + ("00" + video.currentTime.toFixed(0)).slice(-2);
+                const minutes = Math.floor(video.currentTime / 60);
+                const seconds = Math.floor(video.currentTime - minutes * 60);
+
+                const minuteValue = minutes.toString().padStart(2, "0");
+                const secondValue = seconds.toString().padStart(2, "0");
+
+                // Template Literale (in Backticks) können Ausdrücke ausführen und Variablen ausgeben, wenn sie beginnend mit einem $ in geschweiften Klammern angegeben werden
+                const playedTime = `${minuteValue}:${secondValue}`;
+
+                const duration = video.duration.toFixed(1);
+                const range = played.toFixed(2) * 100 / duration;
+                document.querySelector("#played").innerHTML = playedTime;
+
+                rangeLine.value = range;
+            }, false);
+
+            rangeLine.addEventListener("input", function(){
+                video.currentTime = this.value;
+            });
+        }, false);
+    </script>
+</body>
+</html>

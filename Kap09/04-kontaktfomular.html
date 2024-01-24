@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Formularauswertung</title>
+		<script src="lib/js/kontaktformular.js"></script>
+	</head>
+	<body>
+		<h3>Anmeldeformular</h3>
+		<form id="anmeldeform" action="test.php" method="get">
+			<table>
+				<tr>
+					<td width="100">Anrede</td>
+					<td>
+					<input type="radio" name="anrede" value="Frau" checked>
+					Frau
+					<input type="radio" name="anrede" value="Herr">
+					Herr</td>
+				</tr>
+				<tr>
+					<td>Nachname:</td>
+					<td>
+					<input name="nachname" size="50" maxlength="70">
+					</td>
+				</tr>
+				<tr>
+					<td>Vorname:</td>
+					<td>
+					<input name="vorname" size="50" maxlength="70">
+					</td>
+				</tr>
+				<tr>
+					<td>Telefonnummer:</td>
+					<td>
+					<input name="telefon" size="15" maxlength="15">
+					</td>
+				</tr>
+				<tr>
+					<td>Straße</td>
+					<td>
+					<input name="anschrift" size="50" maxlength="70">
+					</td>
+				</tr>
+				<tr>
+					<td>Postleitzahl</td>
+					<td>
+					<input name="plz" size="5" maxlength="5">
+					</td>
+				</tr>
+				<tr>
+					<td>Ort</td>
+					<td>
+					<input name="ort" size="50" maxlength="70">
+					</td>
+				</tr>
+				<tr>
+					<td>E-Mail-Adresse</td>
+					<td>
+					<input name="mail" size="50" maxlength="50">
+					</td>
+				</tr>
+
+
+			</table>
+
+				<input type="submit" value="Anmelden">
+				<input type="reset" value="Zurücksetzen">
+		</form>
+		<div id="status"></div>
+	</body>
+</html>

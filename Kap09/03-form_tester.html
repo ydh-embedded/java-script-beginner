@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Form testen</title>
+	<script>
+		window.onload = function () {
+			document.getElementById("formular").onsubmit = testen;
+		};
+
+		function testen() {
+			if (document.getElementsByName("Feld")[0].value == "") {
+				alert("Sie müssen etwas eingeben!");
+				document.getElementsByName("Feld")[0].focus();
+				// Die Standard-Methode des Formulars zum Versenden deaktivieren
+				// ! ACHTUNG: return false ist nicht die empfohlende Methode, das Formular NICHT abzusenden
+				return false;
+			} else {
+				alert("Vielen Dank!");
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h3>Überprüfen der Eingabe</h3>
+	<form action="test.php" id="formular">
+		<input type="text" name="Feld">
+		<input type="submit" value="Absenden">
+	</form>
+</body>
+
+</html>

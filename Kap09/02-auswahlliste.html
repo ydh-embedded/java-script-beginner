@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Formulareigenschaften : Auswahlliste</title>
+		<script>
+			window.onload = function() {
+				durchlauf();
+				document.getElementsByName("auswahl")[0].onchange = durchlauf;
+			};
+			function durchlauf() {
+				var text = "";
+				var liste = document.getElementsByName("auswahl")[0];
+
+				for ( i = 0; i < liste.length; i++) {
+					text += 'index: ' + liste.options[i].index + '<br>';
+					text += 'defaultSelected: ' + liste.options[i].defaultSelected + '<br>';
+					text += 'selected: ' + liste.options[i].selected + '<br>';
+					text += 'text: ' + liste.options[i].text + '<br>';
+					text += 'value: ' + liste.options[i].value + '<br>' + '<hr>';
+				}
+
+				document.getElementById("ausgabe").innerHTML = text;
+			}
+		</script>
+
+	</head>
+	<body>
+		<h3>Anzeige der Eigenschaften der ausgewählten Elemente</h3>
+		<form id="form1">
+			<select name="auswahl" size="4" multiple>
+				<option value="Hahn">Der laute Hahn</option>
+				<option value="Katze" selected>Die sanfte Katze</option>
+				<option value="Hund">Der treue Hund</option>
+				<option>Der schlaue Esel</option>
+			</select>
+			<hr />
+
+		</form>
+		<div id="ausgabe"></div>
+	</body>
+</html>

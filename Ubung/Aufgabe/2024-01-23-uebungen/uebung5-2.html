@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Kapitel 5, Übung 2</title>
+</head>
+
+<body>
+  <h2>Schleife</h2>
+  <script>
+    function Raumschiff(name, modell) {
+      this.name = name;
+      this.modell = modell;
+      this.entfernung = 0;
+      /* Hier Methode einfügen */
+      this.entfernen = function (lichtjahre) {
+        this.entfernung += lichtjahre;
+        document.write(this.name + " => Aktuelle Reise: " + lichtjahre + " Lichtjahre -> Erdentfernung: " + this.entfernung + " Lichtjahre<br>");
+      }
+      this.zurueck = function (lichtjahre) {
+        this.entfernung -= lichtjahre;
+        if (this.entfernung > 0) {
+          document.write(this.name + " kommt zurück zur Erde: nur noch " + this.entfernung + " Lichtjahre.<br>");
+        } else if (this.entfernung === 0) {
+          document.write("Willkommen zu Hause auf der Erde, " + this.name + "!</p>");
+        } else {
+          document.write("<p>Autsch, " + this.name + " ist bereits auf der Erde gelandet!</p>");
+        }
+      }
+    }
+
+    var voyager = new Raumschiff("U.S.S. Voyager", "NCC-74656");
+
+    for(var i = 0; i < 10; i++) {
+      voyager.entfernen(20);
+    }
+  </script>
+</body>
+
+</html>

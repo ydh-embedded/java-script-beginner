@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Übung Klasse</title>
+</head>
+<body>
+  <script>
+
+    function Rechteck(x, y, b, h) {
+      this.x = x;
+      this.y = y;
+      this.b = b;
+      this.h = h;
+
+      this.verbreitern = function(b) {
+        this.b += b;
+      }
+
+      this.erhoehen = function(h) {
+        this.h += h;
+      }
+
+      this.skalieren = function(f) {
+        this.b *= f;
+        this.h *= f;
+      }
+
+      this.verschieben = function(x, y) {
+        this.x += x;
+        this.y += y;
+      }
+
+      this.ausgabe = function() {
+        return "Ort: " + this.x + "/" + this.y + ", Größe: " + this.b + "/" + this.h;
+      }
+    }
+
+    const rEins = new Rechteck(50, 10, 100, 200);
+    document.write(rEins.ausgabe() + "<br>");
+
+    rEins.verbreitern(50);
+    document.write(rEins.ausgabe() + "<br>");
+
+    rEins.erhoehen(20);
+    document.write(rEins.ausgabe() + "<br>");
+
+    rEins.skalieren(1.5);
+    document.write(rEins.ausgabe() + "<br>");
+
+    rEins.verschieben(20, 80);
+    document.write(rEins.ausgabe() + "<br>");
+
+  </script>
+</body>
+</html>
