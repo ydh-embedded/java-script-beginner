@@ -3,7 +3,13 @@
 
 let worker = new Worker("worker.js");
 
-
+worker.addEventListener("message" ,
+        (event) => {
+            let data = event.data   ;
+            console.log(data)       ;
+            
+        }
+);
 
 
 
