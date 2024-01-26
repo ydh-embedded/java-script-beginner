@@ -10,12 +10,12 @@
 		};
 
 		function testen() {
-			if (document.getElementsByName("Feld")[0].value == "") {
+			if (document.getElementsByName("Feld")[0].value.trim() == "") {
 				alert("Sie müssen etwas eingeben!");
 				document.getElementsByName("Feld")[0].focus();
 				// Die Standard-Methode des Formulars zum Versenden deaktivieren
 				// ! ACHTUNG: return false ist nicht die empfohlende Methode, das Formular NICHT abzusenden
-				return false;
+				event.preventDefault();
 			} else {
 				alert("Vielen Dank!");
 			}

@@ -4,18 +4,25 @@
 <head>
   <meta charset="utf-8">
   <title>Ein JavaScript-Formular</title>
-
 </head>
 
 <body>
   <h3>Auslesen der Formulardaten</h3>
+
   <form id="form1">
     <input name="vname"> Vorname<br>
     <input name="nname"> Nachname<br>
     <input type="submit">
   </form>
-  <script type="text/javascript">
-    // ! Hier Script eintragen
+
+  <script>
+      with ( document.querySelector("#form1")){
+        action = "test.php" ;
+        method = "post"     ;
+      }
+/*     enctype nur nutzen , wenn das formular direkt an eine Mail-Adresse gesendet wird */
+/*     enctype = "text/plain"; */
+
   </script>
 </body>
 
