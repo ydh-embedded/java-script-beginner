@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>event Maus</title>
+
+
+
+
+</head>
+<body>
+    <img src="lib/images/th_winter.jpg" alt="winterbild">
+    <div id="output"></div>
+
+    <script>
+
+        const b = document.querySelector("img") ;
+        const output = document.querySelector("#output");
+
+        b.addEventListener("click", event =>{
+            console.log(event.offsetX , event.offsetY , b.width , b.height);
+
+            if ( (b.width / event.offsetX) < 2 ) {
+                output.innerHTML = "rechts "  ;
+            }else {
+                output.innerHTML = "links " ;
+            }
+
+            if ( (b.height / event.offsetY) < 2 ) {
+                output.innerHTML += "unten"     ;       // += Konkaninator Opperator
+            }else {
+                output.innerHTML += "oben"     ;       // += Konkaninator Opperator
+            }
+            
+        })
+
+    </script>
+    
+</body>
+</html>
