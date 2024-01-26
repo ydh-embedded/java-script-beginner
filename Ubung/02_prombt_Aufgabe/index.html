@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/css/js4.css">
+    <script>
+        function zeigeGrossesBild(bildURL) {
+            document.querySelector("#fullImg").setAttribute("src" , "lib/images/" + bildURL )
+        }
+    </script>
+
+
+    <title>events</title>
+
+
+
+
+</head>l
+<body>
+
+    <table>
+        <tr>
+            <td><img onclick="zeigeGrossesBild('blau.jpg')" src="lib/images/thb_blau.jpg" alt="blau" srcset=""></td>
+            <td><img onclick="zeigeGrossesBild('blau.jpg')" src="lib/images/thb_blau.jpg" alt="blau" srcset=""></td>
+            <td><img onclick="zeigeGrossesBild('blau.jpg')" src="lib/images/thb_blau.jpg" alt="blau" srcset=""></td>
+            <td><img onclick="zeigeGrossesBild('blau.jpg')" src="lib/images/thb_blau.jpg" alt="blau" srcset=""></td>
+        </tr>
+    </table>
+
+
+
+    <img src="" id="fullImg" alt="Bild in der Tabelle">
+</body>
+</html>
