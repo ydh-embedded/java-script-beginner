@@ -1,2 +1,6 @@
 Kap11/video/mm.mp4
 Kap11/video/mm.ogv
+Ubung/05_audio/lib/audio/song.ogg
+.vscode
+node_modules
+package-lock.json
