@@ -55,7 +55,9 @@ button:focus:hover {
 }
 
 #playerControls > div {
-    margin-bottom: 50px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
 }
 
 #playerControls > span {

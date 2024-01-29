@@ -19,15 +19,14 @@
     </audio>
 
     <div id="playerControls">
-        <div>
-            aktuelle Zeit: <span id="played">0:00</span> / Dauer: <span id="toend"></span><br>
-           <br>
-            <input type="range" id="rangeLine" value="0">
+        <button id="">aktuelle Zeit:</button> 
+        <button id="played">0:00</button> 
+        <button id="toend"> </button><br>
+        <button id="play"     class="icon-control-play"   ></button>
+        <button id="pause"    class="icon-control-pause"  ></button>
+        <button id="rewind"   class="icon-control-forward"></button>
+        <div><input type="range" id="rangeLine" value="0"><br>
         </div>
-
-        <span id="play"     >&gt;   </span>
-        <span id="pause"    >||     </span>
-        <span id="rewind"   >|&lt;  </span>
     </div>
 
     <script>
