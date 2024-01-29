@@ -35,8 +35,8 @@
     <h1>Video mit JavaScript steuern</h1>
 
     <video preload="metadata" playsinline id="video" controls>
-        <source src="../video/mm.ogv" type="video/ogv">
-        <source src="../video/mm.mp4" type="video/mp4">
+        <source src="video/mm.ogv" type="video/ogv">
+        <source src="video/mm.mp4" type="video/mp4">
     </video>
 
     <div id="playerControls">
@@ -54,12 +54,16 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             with (document) {
-                const video = querySelector("#video");
-                const play = querySelector("#play");
-                const pause = querySelector("#pause");
-                const rewind = querySelector("#rewind");
+                const video     = querySelector("#video");
+                const play      = querySelector("#play");
+                const pause     = querySelector("#pause");
+                const rewind    = querySelector("#rewind");
                 const rangeLine = querySelector("#rangeLine");
             }
+
+
+
+
 
             play.addEventListener("click", ()=>{
                 video.play();
@@ -71,11 +75,28 @@
                 video.currentTime = 0;
             });
 
+
+
+
             video.addEventListener("loadedmetadata", ()=>{
+                console.log('video.duration.toFixed(1)');                                  // liefert in sekunden
+                console.log('video.duration');                                  // liefert in sekunden
+                
                 const duration = video.duration.toFixed(1);
                 const m = Math.floor(duration / 60, 0) + ":" + (Math.floor(duration, 0) - 60);
                 document.querySelector("#toend").innerHTML = m;
             });
+
+
+
+
+
+
+
+
+
+
+
 
             video.addEventListener("timeupdate", ()=>{
                 const played = video.currentTime;

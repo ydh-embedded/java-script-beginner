@@ -1,47 +1,3 @@
-function getAudioElement() {
-  let oAudio = null;
-  if(window.HTMLAudioElement) {
-    oAudio = document.querySelector("#myaudio");
-  }
-  return oAudio;
-}
-
-function playAudio() {
-  let oAudio = getAudioElement();
-  if(oAudio !== null) {
-    let oBtn = document.querySelector("#play");
-
-    // teste, ob der Song pausiert
-    if(oAudio.paused) {
-      oAudio.play();
-      oBtn.innerHTML = "Pause";
-    } else {
-      oAudio.pause();
-      oBtn.innerHTML = "Abspielen";
-    }
-  }
-}
-
-function rewindAudio(sek) {
-  let oAudio = getAudioElement();
-  if(oAudio !== null) {
-    oAudio.currentTime -= sek;
-  }
-}
-
-function forwardAudio(sek) {
-  let oAudio = getAudioElement();
-  if(oAudio !== null) {
-    oAudio.currentTime += sek;
-  }
-}
-
-function restartAudio() {
-  let oAudio = getAudioElement();
-  if(oAudio !== null) {
-    oAudio.currentTime = 0;
-  }
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   let aBtn = document.querySelectorAll("button");
@@ -65,3 +21,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   aBtn[5].onclick = restartAudio;
 });
+
+
+
+function playAudio() {
+  let oAudio = getAudioElement();
+  if(oAudio !== null) {
+    let oBtn = document.querySelector("#play");
+
+    // teste, ob der Song pausiert
+    if(oAudio.paused) {
+      oAudio.play();
+      oBtn.innerHTML = "Pause";
+    } else {
+      oAudio.pause();
+      oBtn.innerHTML = "Abspielen";
+    }
+  }
+}
+
+
+function getAudioElement() {
+  let oAudio = null;
+  if(window.HTMLAudioElement) {
+    oAudio = document.querySelector("#myaudio");
+  }
+  return oAudio;
+}
+
+
+
+function rewindAudio(sek) {
+  let oAudio = getAudioElement();
+  if(oAudio !== null) {
+    oAudio.currentTime -= sek;
+  }
+}
+
+function forwardAudio(sek) {
+  let oAudio = getAudioElement();
+  if(oAudio !== null) {
+    oAudio.currentTime += sek;
+  }
+}
+
+function restartAudio() {
+  let oAudio = getAudioElement();
+  if(oAudio !== null) {
+    oAudio.currentTime = 0;
+  }
+}
