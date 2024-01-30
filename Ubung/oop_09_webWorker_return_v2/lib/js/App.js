@@ -1,9 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-import ("./worker.js").then(({ worker }) => {
-        self.postMessage(worker(data));
-})
+
 
 let worker = new Worker("./worker.js" , { type: "module"});
 

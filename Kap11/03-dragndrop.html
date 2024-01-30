@@ -28,13 +28,13 @@
         const draggedItem = document.querySelector("#draggedItem");
 
         draggedItem.ondragstart = (event) => {
-            console.log(event.target);
+            console.log(event.target.id);
             event.dataTransfer.setData("ID", event.target.id);
         }
 
         dropzone.ondragover = (event) => {
             event.preventDefault();
-            event.currentTarget.style = "background-color: pink;";
+            event.currentTarget.style = "background-color: green;";
         }
 
         dropzone.ondrop = (event) => {
