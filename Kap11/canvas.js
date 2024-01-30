@@ -3,7 +3,7 @@
 
 
 function drawCanvas(){
-    const cvs = document.querySelectorAll                                               // wiir erzeugen eine constante canvas  bzw. cvs
+    const cvs = document.querySelector("#canvas");                                              // wiir erzeugen eine constante canvas  bzw. cvs
     if(cvs.getContext){                                                                 //  wir prüfen ob es einen canvas Context / ihnalt gibt
         const context = cvs.getContext("2d");
         context.fillStyle = "rgb(255,0,255)";
@@ -35,11 +35,11 @@ function animate( cvs , context , ax , ay , aw , ah , bx , by , bw , bh ) {     
     setTimeout(() => {
         // Bewegen und Abprallen für Quadrat A
                 // Abprallpunkt für x-Achse bestimmen und Koordoinate neu setzen
-                if( ax == (cvs.width - aw) ) aw = -1;
+                if( ax == (cvs.width - canvasAW) ) aw = -1;
                 else if( ax == 0 ) aw = 1;
                 
                 // Abprallpunkt für y-Achse bestimmen und Koordoinate neu setzen
-                if( ay == (cvs.height - ah) ) ah = -1;
+                if( ay == (cvs.height - canvasAH) ) ah = -1;
                 else if( ay == 0 ) ah = 1;
 
                 // Koordinaten neu berechnen
@@ -49,11 +49,11 @@ function animate( cvs , context , ax , ay , aw , ah , bx , by , bw , bh ) {     
 
                 // Bewegen und Abprallen für Quadrat B
                 // Abprallpunkt für x-Achse bestimmen und Koordoinate neu setzen
-                if( bx == (cvs.width - bw) ) bw = -1;
+                if( bx == (cvs.width - canvasBW) ) bw = -1;
                 else if( bx == 0 ) bw = 1;
                 
                 // Abprallpunkt für y-Achse bestimmen und Koordoinate neu setzen
-                if( by == (cvs.height - bh) ) bh = -1;
+                if( by == (cvs.height - canvasBH) ) bh = -1;
                 else if( by == 0 ) bh = 1;
 
                 // Koordinaten neu berechnen
@@ -63,9 +63,9 @@ function animate( cvs , context , ax , ay , aw , ah , bx , by , bw , bh ) {     
                 // alles neu zeichnen
                 context.clearRect(0, 0, 300, 200);
                 context.fillStyle = "rgba(0,0,255,0.5)";
-                context.fillRect( ax, ay, aw, ah);
+                context.fillRect( ax, ay, canvasAW, canvasAH);
                 context.fillStyle = "rgba(0,255,0,0.5)";
-                context.fillRect( bx, by, bw, bh);
+                context.fillRect( bx, by, canvasBW, canvasBH);
 
                 // selbstaufruf der Funktion animate
                 self.animate(cvs, context, ax, ay, aw, ah, bx, by, bw, bh);
@@ -76,14 +76,14 @@ function flyingSqrs(){
 
     const cvs = document.querySelector("#flyingSqrs");
     if ( cvs.getContext ) {
-        cvs.getContext("2d");
+        const context = cvs.getContext("2d");
         animate( cvs , context , 31 , 69 , 1 , -1 , 8 , 25 , 1 , 1 );
     }
 }
 
 
 
-document.addEventListener("DOMContentLoaded") , (event) => {
+document.addEventListener("DOMContentLoaded" , () => {
     drawCanvas();
     flyingSqrs();
-}
+});
