@@ -44,7 +44,11 @@
     var ausgabe = document.getElementById('ausgabe');
 
     function ermittlePosition() {
-      if (navigator.geolocation) {/* 
+/*
+      let options05 = { timeout: 0.5 }
+      let options5  = { timeout: 5 } */
+
+      if (navigator.geolocation) {/*
         ausgabe.innerHTML = 'Chacka'; */
         navigator.geolocation.getCurrentPosition(zeigePosition, zeigeFehler);
       } else {
