@@ -14,4 +14,5 @@ class CostumCard extends HTMLElement{
 
 }
 
+
 costumElements.define("costum-card" , CostumCard);
