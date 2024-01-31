@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 Audio Player</title>
+  <script type="text/javascript" src="lib/audio-js-plus.js"></script>
+  <link rel="stylesheet" href="lib/simple-line-icons.css">
+  <link rel="stylesheet" href="lib/audio-js-plus.css">
+</head>
+
+<body>
+  <audio id="myaudio">
+    <source src="song.ogg" type="audio/ogg" />
+    <source src="song.mp3" type="audio/mpeg" />
+    HTML5 audio wird nicht unterstützt
+  </audio>
+  
+  <div id="audioControls">
+    <div id="time">
+      <p id="currTime">00:00 / 00:00</p>
+      <div id="timeLine" style="width:100px">
+        <div></div>
+      </div>
+      <div>Volume: <input type="range" id="vol"></div>
+    </div>
+    
+    <div>
+      <button class="icon-control-play" id="play"></button>
+      <button class="icon-control-rewind"><span> 30</span></button>
+      <button class="icon-control-rewind"><span> 10</span></button>
+      <button class="icon-control-forward"><span> 10</span></button>
+      <button class="icon-control-forward"><span> 30</span></button>
+      <button class="icon-control-start"></button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const edit = document.querySelector("#edit");
-  const clear = document.querySelector("#clear");
-  const todoList = document.querySelector("#todoList");
+
+
+  const edit      = document.querySelector("#edit");
+  const clear     = document.querySelector("#clear");
+  const todoList  = document.querySelector("#todoList");
 
   function restoreContents() {
     const myTodoList = localStorage["todoList"];

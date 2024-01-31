@@ -10,7 +10,7 @@
 <body>
     <h1>Geolocation nutzen</h1>
 
-    <div id="pos">
+    <div id="pos" >
         <div class="loading-circle">
             <div></div>
         </div>
@@ -18,8 +18,12 @@
 
     <script>
         navigator.geolocation.getCurrentPosition(function(position){
+            console.log(position);
+            
             document.querySelector("#pos").innerHTML = "Latitude: " + position.coords.latitude + " / Longitude: " + position.coords.longitude;
-        }, function(){
+        },
+         function(){
+
             document.querySelector("#pos").innerHTML = "Deine Position konnte leider nicht ermittelt werden.";
         });
     </script>

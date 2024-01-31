@@ -1,7 +1,9 @@
 
+document.addEventListener("DOMContentLoaded", (event) => {
 
 
-let worker = new Worker("worker.js");
+
+let worker = new Worker("worker.js" , { type: "module"});
 
 worker.addEventListener("message" ,
         (event) => {
@@ -12,11 +14,18 @@ worker.addEventListener("message" ,
 );
 
 
+worker.addEventListener("error" ,
+        (event) => {
+            /* let data = event.data   ; */
+            console.log(event)       ;
+            
+        }
+);
+
+
 
 function startMyWork() {
-    
     worker.postMessage([ 1 , 6 , 4 , 8 , 11 , 68 , 43 , 22 , 2 , 8 , 9 , 12 ])
-    
 }
 
 
@@ -24,3 +33,6 @@ document
     .querySelector('#startWorker')
     .addEventListener( "click" , startMyWork )
     ;
+
+
+});

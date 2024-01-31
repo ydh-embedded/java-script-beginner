@@ -1,0 +1,1 @@
+category/show verweist auf article/index

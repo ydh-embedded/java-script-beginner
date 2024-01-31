@@ -1,39 +1,38 @@
 let counter = 0;
 /* === DOM schützen === */
 document.addEventListener("DOMContentLoaded", () => {
-  
-  /* === Speichern von Informationen === */
-  document.querySelector("#b1").onclick = () => {
-    // fortlaufend nummerierten Eintrag mit einer Zufallszahl im lokalen Speicher speichern
-    localStorage.setItem("key" + counter++, Math.random());
+
+  document.querySelector("#b1").onclick = () => {                                 /* === Speichern von Informationen === */
+    
+    localStorage.setItem("key" + counter++, Math.random());                     // fortlaufend nummerierten Eintrag mit einer Zufallszahl im lokalen Speicher speichern
   };
 
-  /* === Lesen von Informationen === */
-  document.querySelector("#b2").onclick = () => {
-    // Variablen deklarieren
-    let ausg = document.querySelector("#ausgabe");
+
+  document.querySelector("#b2").onclick = () => {                                   /* === Lesen von Informationen === */
+
+    let ausg = document.querySelector("#ausgabe");                                  // Variablen deklarieren
     let j = 0;
 
-    // leere Zeichenkette zuweisen
-    ausg.innerHTML = "";
 
-    // Speicherinhalt zeilenweise durchlaufen
-    for( let i in localStorage) {
-      // Prüfen ob der Inhalt nicht NULL ist
-      if(localStorage.key(j) !== null) {
-        // Schlüssel und Wert ausgeben
-        ausg.innerHTML += localStorage.key(j++) + ": " + localStorage.getItem(i) + "<br>";
+    ausg.innerHTML = "";                                                                // leere Zeichenkette zuweisen
+
+
+    for( let i in localStorage) {                                                     // Speicherinhalt zeilenweise durchlaufen
+
+      if(localStorage.key(j) !== null) {                                                  // Prüfen ob der Inhalt nicht NULL ist
+
+        ausg.innerHTML += localStorage.key(j++) + ": " + localStorage.getItem(i) + "<br>";                // Schlüssel und Wert ausgeben
       }
     }
   };
 
-  /* === Löschen von Informationen === */
-  document.querySelector("#b3").onclick = () => {
-    // Counter resetten
-    counter = 0;
-    // Speicher leeren
-    localStorage.clear();
-    // Ausgabe-Div leeren
-    document.querySelector("#ausgabe").innerHTML = "";
+
+  document.querySelector("#b3").onclick = () => {                                     /* === Löschen von Informationen === */
+
+    counter = 0;                                                                      // Counter resetten
+
+    localStorage.clear();                                                                 // Speicher leeren
+
+    document.querySelector("#ausgabe").innerHTML = "";                                        // Ausgabe-Div leeren
   };
 });
