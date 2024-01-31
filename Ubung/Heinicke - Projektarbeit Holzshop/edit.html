@@ -5,16 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edit</title>
 
-
     <link rel="stylesheet" href="lib/css/style.css"                 >
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"                 >
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-utilities.min.css"                 >
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.rtl.min.css"                 >
+
+    <link rel="stylesheet" href="lib/fonts/gloria-hallelujah-v17-latin-regular.eot" >
+    <link rel="stylesheet" href="lib/fonts/gloria-hallelujah-v17-latin-regular.svg" >
+    <link rel="stylesheet" href="lib/fonts/gloria-hallelujah-v17-latin-regular.woff2" >
     <link rel="stylesheet" href="lib/fonts/Simple-Line-Icons.woff2" >
 
 
 </head>
 <body>
+    <header>
+        <h3>Konfiguration</h3>
+    </header>
+    <div class="card">
+        <div class="row">
+          <div class="col-6">
+            <h1>Geben Sie Ihre Daten ein!</h1>
+            <form id="anmeldeform" action="test.php" method="post">
+                <table>
     
+                    <tr>
+                        <td width="100">Anrede</td>
+                        <td><input type="radio" 	type="text" name="anrede" value="Frau" checked>Frau<input type="radio" type="text" name="anrede" value="Herr">Herr</td>
+                    </tr>
+    
+                    <tr>
+                        <td>Vorname:</td>
+                        <td><input name="vorname" 	type="text" size="15" maxlength="15"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>*Nachname:</td>
+                        <td><input name="nachname" 	type="text" size="15" maxlength="15"></td>
+                    </tr>
+    
+    
+                    <tr>
+                        <td>*Telefonnummer:</td>
+                        <td><input name="telefon" 	type="text" size="15" maxlength="15"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>*Straße</td>
+                        <td><input name="anschrift" type="text" size="15" maxlength="15"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>*Postleitzahl & Ort</td>
+                        <td><input name="plz" 		type="text" size="15" maxlength="15"></td>
+                        <td><input name="ort" 		type="text" size="15" maxlength="15"></td>
+                    </tr>
+                    
+    
+                    <tr>
+                        <td>*E-Mail-Adresse</td>
+                        <td><input name="mail" 		type="mail" size="15" maxlength="50"></td>
+                    </tr>
+    
+    
+                    
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" 		 value="Berechnen"></td>
+                        <td><input type="reset" 		 value="Zurücksetzen"></td>
+                    </tr>
+                    
+                </table>
+                    
+            </form>
+            <div id="status"></div>
+            <button type="submit" class="btn btn-primary">Berechnen</button>
+            <button type="reset" class="btn btn-secondary">Zurücksetzen</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    <script src="lib/js/App.js"></script>
+    <script src="lib/js/custom.js"></script>
+    <script src="lib/js/volumen_rechner.js"></script>
 </body>
 </html>
