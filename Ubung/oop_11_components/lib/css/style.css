@@ -83,43 +83,4 @@ button:focus:hover {
     cursor: pointer;
 }
 
-.card {
-    background-color: var(--primary-color-focus-border);
-    border-radius:      7px  ;
-
-    padding:            20px  ;
-    margin-bottom:      10px  ;
-    width:              100%  ;
-    max-width:          360px ;
-    
-}
-
-.card-header {
-    display:        flex   ;
-    align-items:    center ;
-    justify-content: space-between;
-}
-.card-header > h2 {
-    font-size:      1.5rem ;
-    margin-bottom:      2px;
-}
-
-.card-body{
-    margin:            20px;
-}
-
-.card-footer {
-    display:    flex   ;
-    align-items: center;
-    justify-content: space-between;
-}
-
-custom-card {
-    display: block;
-    background: var(--primary-color-hover);
-    color: #2c3e50  ;
-    border-radius: 7px;
-    padding-left: 11px;
-}
-
 

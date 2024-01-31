@@ -1,4 +1,4 @@
-import "./custom-card.js";                                              // Wir parsen diese Datei und geben nix an die aufrufende Stelle zurück(export entfällt hier)
+import "./costum-card.js";                                              // Wir parsen diese Datei und geben nix an die aufrufende Stelle zurück(export entfällt hier)
 
 
 document.addEventListener("DOMContentLoaded" , function() {
