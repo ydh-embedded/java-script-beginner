@@ -18,13 +18,13 @@ function drawCanvas(){
  * @param ay   y-Koordinate des Rechteckes
  * @param aw   Breite des Rechteckes
  * @param ah   Höhe des Rechteckes
- * 
+ *
  * @param bx   x-Koordinate des 2ten Rechteckes
  * @param by   y-Koordinate des 2ten  Rechteckes
  * @param bw   Breite des Rechteckes
  * @param bh   Höhe des Rechteckes
- * 
- * 
+ *
+ *
  */
 function animate( cvs , context , ax , ay , aw , ah , bx , by , bw , bh ) {                                                                   // animate lässt rechteck am rand zurück springen
     const canvasAW = 50  ;
