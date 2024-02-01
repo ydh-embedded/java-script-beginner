@@ -1,19 +1,14 @@
-
-
-
-
 window.onload = function() {
-	durchlauf();
-	document.getElementsByName("DropDownFeld")[0].onchange = durchlauf;
-	document.getElementById("formRiss").action = "test.php" ;
+	/* durchlauf(); */
+	/* document.getElementsByName("DropDownFeld")[0].onchange = durchlauf; */
 };
 
 function durchlauf() {
 	var ausgabe = "";
 
-/* 				zeigt eigenschaften des listen objectes an */
+
 /* 				var liste = document.getElementsByName("auswahl")[0]; */
-				var liste = document.getElementsByName("DropDownFeld")[0];
+				var liste = document.getElementsByName("DropDownFeld")[0];							/* zeigt eigenschaften des listen objectes an */
 
 				for ( i = 0; i < liste.length; i++) {
 					ausgabe += 'index: ' 				+ liste.options[i].index 			+ '<br>'	;

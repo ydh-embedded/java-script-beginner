@@ -22,7 +22,8 @@
         <div class="row">
           <div class="col-6">
             <h1>Geben Sie Ihre Daten ein!</h1>
-            <form id="configPlate" action="test.php" method="post" id="formular">
+       <!-- <form id="configPlate" action="test.php" method="post" id="formular"> -->
+            <form id="configPlate" id="formular">
                 <table>
     
                     <tr>
@@ -33,7 +34,7 @@
     
                     <tr><!-- hier DropDown -->
                         <td>Form:</td>
-                        <td><select name="formForm" 	type="text" size="1.7" maxlength="15" >
+                        <td><select name="formForm" 	type="text" size="1.7" maxlength="15" readonly >
                             
                             <option value="Gerade-Kante"        >Gerade Kante           </option>
                             <option value="Facettenkante"       >Facettenkante          </option>
@@ -48,19 +49,19 @@
                             
                             </select>
                         </td>
-                        <script src="lib/js/DropDownForm.js"></script>
+                        
                     </tr>
     
                     <tr><!-- hier DropDown -->
                         <td>Rissanteil:</td>
-                        <td><select name="formRiss" 	type="text" size="1.7" maxlength="15" multible>
+                        <td><select name="formRiss" 	type="text" size="1.7" maxlength="15" readonly>
 
                             <option value="Leichter-Rissanteil" >Leichter Rissanteil</option>
                             <option value="Normaler-Rissanteil" >Normaler Rissanteil</option>
                             
                             </select>
                         </td>
-                        <script src="lib/js/DropDownRiss.js"></script>
+                        
                     </tr>
     
                     <tr>
@@ -70,7 +71,7 @@
     
                     <tr><!-- hier DropDown -->
                         <td>Farbe</td>
-                        <td><select name="formFarbe" type="text" size="1.7" maxlength="15">
+                        <td><select name="formFarbe" type="text" size="1.7" maxlength="15" readonly>
                             <option value="Natura"              >Natura                 </option>
                             <option value="Alte-Eiche"          >Alte Eiche             </option>
                             <option value="Eiche-dunkel"        >Eiche dunkel           </option>
@@ -80,37 +81,40 @@
                             <option value="Weiss-gekälkt"       >Weiss gekälkt          </option>
                             </select>
                         </td>
-                        <script src="lib/js/DropDownFarbe.js"></script>
+                        
                     </tr>
     
                     <tr><!-- hier DropDown -->
                         <td>Finish</td>
-                        <td><select name ="formFinish" type="text" size="1.7" >
+                        <td><select name ="formFinish" type="text" size="1.7" readonly>
                             <option value="Mattlack"            >Mattlack               </option>
                             <option value="Hartöl"              >Hartöl                 </option>
                             </select>
                         </td>
-                        <script src="lib/js/DropDownFinish.js"></script>
+                        
                     </tr>
 
 
 
                     <tr>
                         <td>Breite</td>
-                        <td><input name="breite" type="text" size="15" maxlength="15"></td>
-                        <script src="lib/js/FormBreite.js"></script>
+                        <td><input name="breite" id="breite" type="text" size="15" maxlength="15"></td>
+                        
                     </tr>
 
-                    
+
                     <tr>
                         <td>Länge</td>
-                        <td><input name="lange"  type="text" size="15" maxlength="15"></td>
-                        <script src="lib/js/FormLange.js"></script>
+                        <td><input name="lange" id="lange"  type="text" size="15" maxlength="15"></td>
+                        
                     </tr>
-    
+
+
+
+
                     <tr><!-- hier DropDown -->
                         <td>Stärke:</td>
-                        <td><select name="formStarke" 	type="text" size="1.7" maxlength="15" >
+                        <td><select name="formStarke" 	type="text" size="1.7" maxlength="15" readonly>
                             <option value="40"  >40 mm                          </option>
                             <option value="50"  >50 mm                          </option>
                             <option value="60"  >60 mm                          </option>
@@ -123,7 +127,7 @@
 
                             </select>
                         </td>
-                        <script src="lib/js/DropDownStarke.js"></script>
+                        
                     </tr>
     
 
@@ -155,7 +159,8 @@
 
 
     <script src="lib/js/onFocus.js"></script>
+    <script src="lib/js/DropDown.js"></script>
     <script src="lib/js/formular.js"></script>
-    <script src="lib/js/volumen_rechner.js"></script>
+    <script src="lib/js/calc.js"></script>
 </body>
 </html>

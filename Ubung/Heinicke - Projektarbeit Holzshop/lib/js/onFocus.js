@@ -1,37 +1,25 @@
-
-
-
+//#region  wir legen eine function testeZeichen mit checkForm an
 
 function testeZeichen   ( forminhalt , erlaubteZeichen ){
     let alleZeichenOK =true ;
      for ( let i = 0 ; i < forminhalt.lenght ; i++){
- 
- 
- 
- /*      if (erlaubteZeichen.regExp /[0-9]_\// ){
-             alleZeichenOK = false;
-             break ;
-         } */
- 
- 
- 
-         if (erlaubteZeichen.indexOf (formInhalt.charAt(i)) === -1 ){            /* wir prüfen ob jedes zeichen in der erlaubten liste drinnen steht */
-             alleZeichenOK = false;
-             break ;
-         }
-     }
-     return alleZeichenOK    ;
- }
-//#region  wir legen eine function checkForm an
-    function checkForm      (event)     {
+
+        if (erlaubteZeichen.indexOf (formInhalt.charAt(i)) === -1 ){            /* wir prüfen ob jedes zeichen in der erlaubten liste drinnen steht */
+            alleZeichenOK = false;
+            break ;
+        }
+    }
+    return alleZeichenOK    ;
+}
+function checkForm      (event)     {
         let fehlermeldung = ""  ;
         const form = document.querySelector("#configPlate");                    /* wir prüfen auf eingabefeld */
 
         if  ( form.breite.value.trim() === "" ){
-        fehlermeldung += " Bitte geben Sie Ihre Breite ein!                     <br>"   ;           //#region  function checkForm : wir prüfen ob das Feld leer ist
+                        fehlermeldung += " Bitte geben Sie Ihre Breite ein!                     <br>"   ;           //#region  function checkForm : wir prüfen ob das Feld leer ist
         }
         if  ( form.lange.value.trim() === "" ){
-            fehlermeldung += " Bitte geben Sie Ihre Länge ein!                  <br>"   ;
+                        fehlermeldung += " Bitte geben Sie Ihre Länge ein!                  <br>"   ;
         }
 
         //  function checkForm : wir prüfen die Eingabe
@@ -67,7 +55,7 @@ function checkReset     ()          {
     return confirm("Wollen Sie die Eingabe wirklich zurücksetzen?");
 }
 //#endregion
-
+//#region  event by submit und reset
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("#configPlate") ;
     form.onsubmit           = checkForm     ;                                               /*     wir reagieren auf das submit ereignis */
@@ -79,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.lange.onfocus  = () => { putStatus('Bitte geben Sie hier die gewünschte Länge ein'         );}
     form.lange.onblur   = clearStatus ;
 
-    form.starke.onfocus  = () => { putStatus('Bitte geben Sie hier die gewünschte Stärke ein'       );}
-    form.starke.onblur   = clearStatus ;
+    
 
 } );
+//#endregion

@@ -1,10 +1,18 @@
 window.onload = function() {
 	document.getElementById("calc").onclick = umrechnen;
-
 };
+
 function umrechnen() {
-	var menge = document.getElementById("Summe").eingabewert.value;
+	var menge = document.getElementById("Summe").formstarke.value;
+
+
 	with (document.getElementById("Summe")) {
+
+
+
+
+
+
 		switch (einheit.options.selectedIndex) {
 			case 0:
 				tausender = 1;
@@ -31,4 +39,4 @@ function umrechnen() {
 		liter.value = menge * tausender / 1000 / 1000;
 		hektoliter.value = menge * tausender / 1000 / 1000 / 100;
 	}
-}
+};
