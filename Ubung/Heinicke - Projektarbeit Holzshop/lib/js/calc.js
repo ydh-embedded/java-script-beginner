@@ -3,40 +3,52 @@ window.onload = function() {
 };
 
 function umrechnen() {
-	var menge = document.getElementById("Summe").formstarke.value;
+/* 	var menge = document.getElementById("Summe").formstarke.value; */
+	var starke = document.getElementById("formStarke").value;
+	
+	console.log(starke);
+	alert(starke);
+	
 
 
-	with (document.getElementById("Summe")) {
+	with (document.getElementById("formStarke")) {
 
 
 
 
 
 
-		switch (einheit.options.selectedIndex) {
+		switch (formStarke.options.selectedIndex) {
 			case 0:
-				tausender = 1;
+				starke = 1;
 				break;
 			case 1:
-				tausender = 1000;
+				starke = 1000;
 				break;
 			case 2:
-				tausender = 1000 * 1000;
+				starke = 1000 * 1000;
 				break;
 			case 3:
-				tausender = 1000 * 1000 * 1000;
+				starke = 1000 * 1000 * 1000;
 				break;
 			case 4:
-				tausender = 1000 * 1000;
+				starke = 1000 * 1000;
 				break;
 			case 5:
-				tausender = 1000 * 1000 * 100;
+				starke = 1000 * 1000 * 100;
 		}
-		cmm.value = menge * tausender;
+
+/* 		cmm.value = menge * tausender;
 		ccm.value = menge * tausender / 1000;
 		cdm.value = menge * tausender / 1000 / 1000;
-		cm.value = menge * tausender / 1000 / 1000 / 1000;
-		liter.value = menge * tausender / 1000 / 1000;
+		cm.value = menge * tausender / 1000 / 1000 / 1000; */
+
+
+/* 		liter.value = menge * tausender / 1000 / 1000;
 		hektoliter.value = menge * tausender / 1000 / 1000 / 100;
+ */
+
+
+
 	}
 };

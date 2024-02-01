@@ -16,6 +16,50 @@ function meldungenLeeren() {                                                    
   /* breiteHelp.innerHTML  = ""   ;
   langeHelp.innerHTML   = ""   ; */
 }
+function price() {
+/* 	var menge  = document.getElementById("Summe").formstarke.value; */
+    var starke = document.getElementById("formStarke").value;
+    
+    console.log(starke);
+    alert(starke);
+    
+    with (document.getElementById("formStarke")) {
+    
+      switch (formStarke.options.selectedIndex) {
+        case 0:
+          starke = 1;
+          break;
+        case 1:
+          starke = 1000;
+          break;
+        case 2:
+          starke = 1000 * 1000;
+          break;
+        case 3:
+          starke = 1000 * 1000 * 1000;
+          break;
+        case 4:
+          starke = 1000 * 1000;
+          break;
+        case 5:
+          starke = 1000 * 1000 * 100;
+      }
+  
+  /* 		cmm.value = menge * tausender;
+      ccm.value = menge * tausender / 1000;
+      cdm.value = menge * tausender / 1000 / 1000;
+      cm.value = menge * tausender / 1000 / 1000 / 1000; */
+  
+  
+  /* 		liter.value = menge * tausender / 1000 / 1000;
+      hektoliter.value = menge * tausender / 1000 / 1000 / 100;
+   */
+  
+  
+  
+    }
+  };
+  
 
 function validate(event) {                                                      // Formular nach betätigen des Sende-Buttons validieren
 
@@ -79,7 +123,7 @@ if( langeerr ) {                                              // Reaktion auf di
 /*  langeHelp.innerHTML = "Die eingegebene Länge ist korrekt!"; */
 }
 if( error ){
-  prompt("Die Eingabe ist nicht korrekt");
+  alert("Die Eingabe ist nicht korrekt");
   console.log(error)
   
   event                         .preventDefault();
@@ -87,7 +131,7 @@ if( error ){
   /* f.action            = "https://test.jaderbass.de/formtester.php" ; */          //wir setzen zum versenden die Attribute
   /* f.method            = "post" ; */                                              //wir wenden die post methode an
   /* f.submit(); */                                                                 //wir senden es ab mit submit
-
+  price();
 }
 
 }
