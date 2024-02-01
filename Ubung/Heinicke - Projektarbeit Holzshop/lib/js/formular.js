@@ -44,8 +44,8 @@ function price() {
         case 5:
           starke = 1000 * 1000 * 100;
           break;
-      alert(starke);
-      }
+        }
+        alert(starke);
   
   /* 		cmm.value = menge * tausender;
       ccm.value = menge * tausender / 1000;
