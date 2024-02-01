@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Event: onclick</title>
+	<script type="text/javascript" src="lib/js/calc.js"></script>
+</head>
+
+<body>
+	<h3>Summe berechnen</h3>
+	<form id="Summe">
+		<hr />
+
+
+		<input name="eingabewert" size="6" maxlength="5">
+
+		<hr />
+		<select name="formStarke">
+			<option value="cmm">mm&sup3;</option>
+			<option value="ccm">cm&sup3;</option>
+			<option value="cdm">dm&sup3;</option>
+			<option value="cm">m&sup3;</option>
+			<option value="l" selected>l (Liter)</option>
+			<option value="hl">hl (Hektoliter)</option>
+		</select>
+
+
+		<hr />
+		<input type="button" id="calc" value="Umrechnen">
+		<hr />
+		<input name="cmm" readonly>
+		mm&sup3;
+		<br>
+		<input type="text" name="ccm" readonly>
+		cm&sup3;
+		<br>
+		<input type="text" name="cdm" readonly>
+		dm&sup3;
+		<br>
+		<input type="text" name="cm" readonly>
+		m&sup3;
+		<br>
+		<input type="text" name="liter" readonly>
+		l (Liter)
+		<br>
+		<input type="text" name="hektoliter" readonly>
+		hl (Hektoliter)
+	</form>
+</body>
+
+</html>

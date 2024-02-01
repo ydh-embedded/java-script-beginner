@@ -1,10 +1,10 @@
 window.onload = function() {
-	document.getElementById("los").onclick = umrechnen;
+	document.getElementById("calc").onclick = umrechnen;
 
 };
 function umrechnen() {
-	var menge = document.getElementById("Volumen").eingabewert.value;
-	with (document.getElementById("Volumen")) {
+	var menge = document.getElementById("Summe").eingabewert.value;
+	with (document.getElementById("Summe")) {
 		switch (einheit.options.selectedIndex) {
 			case 0:
 				tausender = 1;
