@@ -16,45 +16,85 @@
 </head>
 <body>
     <header>
-        <h3>Konfiguration</h3>
+        <h3>Konfiguration Ihrer Tisch-Platte</h3>
     </header>
     <div class="card">
         <div class="row">
           <div class="col-6">
             <h1>Geben Sie Ihre Daten ein!</h1>
-            <form id="configPlate" action="test.php" method="post">
+            <form id="configPlate" action="test.php" method="post" id="formular">
                 <table>
     
                     <tr>
                         <td width="100">Plattendicke</td>
                         <td><input type="radio" 	type="text" name="plate" value="gedoppelt" checked>gedoppelt<input type="radio" type="text" name="plate" value="vollmassiv">vollmassiv</td>
                     </tr>
+
     
-                    <tr>
+                    <tr><!-- hier DropDown -->
                         <td>Form:</td>
-                        <td><input name="form" 	type="text" size="15" maxlength="15"></td>
+                        <td><select name="formForm" 	type="text" size="1.7" maxlength="15" >
+                            
+                            <option value="Gerade-Kante"        >Gerade Kante           </option>
+                            <option value="Facettenkante"       >Facettenkante          </option>
+                            <option value="Mit-Baumkante"       >Mit Baumkante          </option>
+                            <option value="Durchgängige-Bohlen" >Durchgängige Bohlen    </option>
+                            <option value="Mit-Querfrieß"       >Mit Querfrieß          </option>
+                            <option value="Rund"                >Rund                   </option>
+                            <option value="Oval"                >Oval                   </option>
+                            <option value="Schiffsbodenmuster"  >Schiffsbodenmuster     </option>
+                            <option value="Flechtmuster"        >Flechtmuster           </option>
+                            <option value="Rautenmuster"        >Rautenmuster           </option>
+                            
+                            </select>
+                        </td>
+                        <script src="lib/js/DropDownForm.js"></script>
                     </tr>
     
-                    <tr>
+                    <tr><!-- hier DropDown -->
                         <td>Rissanteil:</td>
-                        <td><input name="riss" 	type="text" size="15" maxlength="15"></td>
+                        <td><select name="formRiss" 	type="text" size="1.7" maxlength="15" multible>
+
+                            <option value="Leichter-Rissanteil" >Leichter Rissanteil</option>
+                            <option value="Normaler-Rissanteil" >Normaler Rissanteil</option>
+                            
+                            </select>
+                        </td>
+                        <script src="lib/js/DropDownRiss.js"></script>
                     </tr>
     
                     <tr>
-                        <td>Reine Balken Außenseiten</td>
-                        <td><input name="balken" 	type="text" size="15" maxlength="15"></td>
+                        <td width="100">Reine Balken Außenseiten</td>
+                        <td><input type="radio" name="balken" value="rein" checked>Ja<input type="radio" name="balken" value="nein">Nein</td>
                     </tr>
     
-                    <tr>
+                    <tr><!-- hier DropDown -->
                         <td>Farbe</td>
-                        <td><input name="farbe" type="text" size="15" maxlength="15"></td>
+                        <td><select name="formFarbe" type="text" size="1.7" maxlength="15">
+                            <option value="Natura"              >Natura                 </option>
+                            <option value="Alte-Eiche"          >Alte Eiche             </option>
+                            <option value="Eiche-dunkel"        >Eiche dunkel           </option>
+                            <option value="Hellgrau-geölt"      >Hellgrau geölt         </option>
+                            <option value="Dunkelgrau-geölt"    >Dunkelgrau geölt       </option>
+                            <option value="Weiss-geölt"         >Weiss geölt            </option>
+                            <option value="Weiss-gekälkt"       >Weiss gekälkt          </option>
+                            </select>
+                        </td>
+                        <script src="lib/js/DropDownFarbe.js"></script>
                     </tr>
     
-                    <tr>
+                    <tr><!-- hier DropDown -->
                         <td>Finish</td>
-                        <td><input name="finish" type="text" size="15" maxlength="15"></td>
+                        <td><select name ="formFinish" type="text" size="1.7" >
+                            <option value="Mattlack"            >Mattlack               </option>
+                            <option value="Hartöl"              >Hartöl                 </option>
+                            </select>
+                        </td>
+                        <script src="lib/js/DropDownFinish.js"></script>
                     </tr>
-    
+
+
+
                     <tr>
                         <td>Breite</td>
                         <td><input name="breite" type="text" size="15" maxlength="15"></td>
@@ -62,15 +102,32 @@
     
                     <tr>
                         <td>Länge</td>
-                        <td><input name="lange" type="text" size="15" maxlength="15"></td>
+                        <td><input name="lange"  type="text" size="15" maxlength="15"></td>
                     </tr>
     
-                    <tr>
-                        <td>Stärke</td>
-                        <td><input name="starke" type="text" size="15" maxlength="15"></td>
+                    <tr><!-- hier DropDown -->
+                        <td>Stärke:</td>
+                        <td><select name="formStarke" 	type="text" size="1.7" maxlength="15" >
+                            <option value="40"  >40 mm                          </option>
+                            <option value="50"  >50 mm                          </option>
+                            <option value="60"  >60 mm                          </option>
+                            <option value="70"  >70 mm                          </option>
+                            <option value="80"  >80 mm                          </option>
+                            <option value="90"  >90 mm                          </option>
+                            <option value="100" >100 mm                         </option>
+                            <option value="110" >110 mm                         </option>
+                            <option value="120" >120 mm                         </option>
+
+                            </select>
+                        </td>
+                        <script src="lib/js/DropDownStarke.js"></script>
                     </tr>
     
-                    
+
+
+
+
+    
                     <tr>
                         <td></td>
                         <td><input type="submit" class="input-button" value="Berechnen"><input type="reset"  class="input-button"	value="Zurücksetzen"></td>
@@ -79,7 +136,8 @@
                 </table>
                     
             </form>
-            <div id="status"></div>
+
+           <div id="status"></div>
 
           </div>
         </div>
@@ -91,8 +149,9 @@
 
 
 
-    <script src="lib/js/App.js"></script>
+
     <script src="lib/js/custom.js"></script>
+    <script src="lib/js/onFocus.js"></script>
     <script src="lib/js/volumen_rechner.js"></script>
 </body>
 </html>
