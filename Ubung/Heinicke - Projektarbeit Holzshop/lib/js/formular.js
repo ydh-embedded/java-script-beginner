@@ -21,11 +21,11 @@ function price() {
     var starke = document.getElementById("formStarke").value;
     
     console.log(starke);
-    alert(starke);
     
     with (document.getElementById("formStarke")) {
-    
+      
       switch (formStarke.options.selectedIndex) {
+
         case 0:
           starke = 1;
           break;
@@ -43,6 +43,8 @@ function price() {
           break;
         case 5:
           starke = 1000 * 1000 * 100;
+          break;
+      alert(starke);
       }
   
   /* 		cmm.value = menge * tausender;
