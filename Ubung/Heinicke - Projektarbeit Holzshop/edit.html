@@ -22,61 +22,65 @@
         <div class="row">
           <div class="col-6">
             <h1>Geben Sie Ihre Daten ein!</h1>
-            <form id="anmeldeform" action="test.php" method="post">
+            <form id="configPlate" action="test.php" method="post">
                 <table>
     
                     <tr>
-                        <td width="100">Anrede</td>
-                        <td><input type="radio" 	type="text" name="anrede" value="Frau" checked>Frau<input type="radio" type="text" name="anrede" value="Herr">Herr</td>
+                        <td width="100">Plattendicke</td>
+                        <td><input type="radio" 	type="text" name="plate" value="gedoppelt" checked>gedoppelt<input type="radio" type="text" name="plate" value="vollmassiv">vollmassiv</td>
                     </tr>
     
                     <tr>
-                        <td>Vorname:</td>
-                        <td><input name="vorname" 	type="text" size="15" maxlength="15"></td>
+                        <td>Form:</td>
+                        <td><input name="form" 	type="text" size="15" maxlength="15"></td>
                     </tr>
     
                     <tr>
-                        <td>*Nachname:</td>
-                        <td><input name="nachname" 	type="text" size="15" maxlength="15"></td>
-                    </tr>
-    
-    
-                    <tr>
-                        <td>*Telefonnummer:</td>
-                        <td><input name="telefon" 	type="text" size="15" maxlength="15"></td>
+                        <td>Rissanteil:</td>
+                        <td><input name="riss" 	type="text" size="15" maxlength="15"></td>
                     </tr>
     
                     <tr>
-                        <td>*Straße</td>
-                        <td><input name="anschrift" type="text" size="15" maxlength="15"></td>
+                        <td>Reine Balken Außenseiten</td>
+                        <td><input name="balken" 	type="text" size="15" maxlength="15"></td>
                     </tr>
     
                     <tr>
-                        <td>*Postleitzahl & Ort</td>
-                        <td><input name="plz" 		type="text" size="15" maxlength="15"></td>
-                        <td><input name="ort" 		type="text" size="15" maxlength="15"></td>
+                        <td>Farbe</td>
+                        <td><input name="farbe" type="text" size="15" maxlength="15"></td>
                     </tr>
-                    
     
                     <tr>
-                        <td>*E-Mail-Adresse</td>
-                        <td><input name="mail" 		type="mail" size="15" maxlength="50"></td>
+                        <td>Finish</td>
+                        <td><input name="finish" type="text" size="15" maxlength="15"></td>
                     </tr>
     
+                    <tr>
+                        <td>Breite</td>
+                        <td><input name="breite" type="text" size="15" maxlength="15"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>Länge</td>
+                        <td><input name="lange" type="text" size="15" maxlength="15"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>Stärke</td>
+                        <td><input name="starke" type="text" size="15" maxlength="15"></td>
+                    </tr>
     
                     
                     <tr>
                         <td></td>
-                        <td><input type="submit" 		 value="Berechnen"></td>
-                        <td><input type="reset" 		 value="Zurücksetzen"></td>
+                        <td><input type="submit" class="input-button" value="Berechnen"><input type="reset"  class="input-button"	value="Zurücksetzen"></td>
                     </tr>
                     
                 </table>
                     
             </form>
             <div id="status"></div>
-            <button type="submit" class="btn btn-primary">Berechnen</button>
-            <button type="reset" class="btn btn-secondary">Zurücksetzen</button>
+
           </div>
         </div>
       </div>
