@@ -40,7 +40,7 @@ function checkForm      (event)     {
 
 }
 //#endregion
-//#region //#region function putStatus : nimm den text aus der variable und packe ihn in das DIV ein
+//#region  function putStatus : nimm den text aus der variable und packe ihn in das DIV ein
 function putStatus      (myText)    {
     document.querySelector("#status")
             .innerHTML      = myText;

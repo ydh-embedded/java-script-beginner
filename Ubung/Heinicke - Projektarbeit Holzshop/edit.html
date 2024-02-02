@@ -25,13 +25,12 @@
        <!-- <form id="configPlate" action="test.php" method="post" id="formular"> -->
             <form id="configPlate" id="formular">
                 <table>
-    
+
                     <tr>
                         <td width="100">Plattendicke</td>
                         <td><input type="radio" 	type="text" name="plate" value="gedoppelt" checked>gedoppelt<input type="radio" type="text" name="plate" value="vollmassiv">vollmassiv</td>
                     </tr>
 
-    
                     <tr><!-- hier DropDown -->
                         <td>Form:</td>
                         <td><select name="formForm" 	type="text" size="1.7" maxlength="15" readonly >
@@ -51,24 +50,21 @@
                         </td>
                         
                     </tr>
-    
+
                     <tr><!-- hier DropDown -->
                         <td>Rissanteil:</td>
                         <td><select name="formRiss" 	type="text" size="1.7" maxlength="15" readonly>
-
                             <option value="Leichter-Rissanteil" >Leichter Rissanteil</option>
                             <option value="Normaler-Rissanteil" >Normaler Rissanteil</option>
-                            
                             </select>
                         </td>
-                        
                     </tr>
-    
+
                     <tr>
                         <td width="100">Reine Balken Außenseiten</td>
                         <td><input type="radio" name="balken" value="rein" checked>Ja<input type="radio" name="balken" value="nein">Nein</td>
                     </tr>
-    
+
                     <tr><!-- hier DropDown -->
                         <td>Farbe</td>
                         <td><select name="formFarbe" type="text" size="1.7" maxlength="15" readonly>
@@ -83,7 +79,7 @@
                         </td>
                         
                     </tr>
-    
+
                     <tr><!-- hier DropDown -->
                         <td>Finish</td>
                         <td><select name ="formFinish" type="text" size="1.7" readonly>
@@ -94,23 +90,17 @@
                         
                     </tr>
 
-
-
                     <tr>
                         <td>Breite</td>
                         <td><input name="breite" id="breite" type="text" size="15" maxlength="15"></td>
                         
                     </tr>
 
-
                     <tr>
                         <td>Länge</td>
                         <td><input name="lange" id="lange"  type="text" size="15" maxlength="15"></td>
                         
                     </tr>
-
-
-
 
                     <tr><!-- hier DropDown -->
                         <td>Stärke:</td>
@@ -129,20 +119,15 @@
                         </td>
                         
                     </tr>
-    
 
-
-
-
-    
                     <tr>
                         <td></td>
                         <td><input type="submit" class="input-button" id="calc" value="Berechnen"><input type="reset"  class="input-button"	value="Zurücksetzen"></td>
                     	<script type="text/javascript" src="lib/js/calc.js"></script>
                     </tr>
-                    
+
                 </table>
-                    
+
             </form>
 
            <div id="status"></div>
@@ -160,7 +145,7 @@
 
     <script src="lib/js/onFocus.js"></script>
     <script src="lib/js/DropDown.js"></script>
+    <script src="lib/js/calc.js"></script>
     <script src="lib/js/formular.js"></script>
-<!--<script src="lib/js/calc.js"></script> -->
 </body>
 </html>

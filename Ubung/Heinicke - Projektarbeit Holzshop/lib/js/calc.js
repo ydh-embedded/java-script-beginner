@@ -1,54 +1,69 @@
-window.onload = function() {
-	document.getElementById("calc").onclick = umrechnen;
-};
+function fCalcQuad          ( ){
 
-function umrechnen() {
-/* 	var menge = document.getElementById("Summe").formstarke.value; */
-	var starke = document.getElementById("formStarke").value;
-	
-	console.log(starke);
-	alert(starke);
-	
+let l = lange.value * 0.1 ;
+let b =  breite.value * 0.1 ;
 
+let q = ( l * b )   ;
 
-	with (document.getElementById("formStarke")) {
+console.log(l);
+console.log(b);
+console.log(q);
 
+return q ;
 
+}
 
+function fBasisPrice        (mm, q) {
+    const platePrice = {
+    //   index:  value,
+            25: 300.00,
+            30: 360.00,
+            40: 420.00,
+            50: 480.00,
+            60: 560.00,
+            70: 640.00,
+            80: 720.00,
+            90: 800.00,
+            100: 880.00,
+            110: 960.00,
+            120: 1040.0
 
+    };
 
+    let basePrice = platePrice[mm] * q;
+    console.log(basePrice);
+    console.log('die Function fBasisPrice wurde aufgerufen');
+    return basePrice;
+}
 
-		switch (formStarke.options.selectedIndex) {
-			case 0:
-				starke = 1;
-				break;
-			case 1:
-				starke = 1000;
-				break;
-			case 2:
-				starke = 1000 * 1000;
-				break;
-			case 3:
-				starke = 1000 * 1000 * 1000;
-				break;
-			case 4:
-				starke = 1000 * 1000;
-				break;
-			case 5:
-				starke = 1000 * 1000 * 100;
-		}
+function fAdditionalPrice   ( basePrice , formRiss = false , formBalken = false ){
 
-/* 		cmm.value = menge * tausender;
-		ccm.value = menge * tausender / 1000;
-		cdm.value = menge * tausender / 1000 / 1000;
-		cm.value = menge * tausender / 1000 / 1000 / 1000; */
+    let addCosts = basePrice + ((formRiss ? 47.6 : 0) + (formBalken ? 71.4 : 0));
+    console.log('fAdditionalPrice' + addCosts );
+    console.log('die Function fAdditionalPrice wurde aufgerufen');
+    return addCosts ;
+}
 
+function fVariantPrice      ( addCosts , varPrice1 = false , varPrice2 = false ){
+    let varPrice  = addCosts * ((varPrice1 ? 1 : 0) + (varPrice2 ? 0.85 : 0));
+    console.log('fVariantPrice' + varPrice);
+    console.log('die Function fVariantPrice wurde aufgerufen');
+    return varPrice ;
+}
 
-/* 		liter.value = menge * tausender / 1000 / 1000;
-		hektoliter.value = menge * tausender / 1000 / 1000 / 100;
- */
+function fPrice             ( basePrice , addCosts , varPrice){
+    let endPrice = basePrice + addCosts + varPrice ;
+    console.log     ('fPrice' + endPrice);
+    console.log     ('die Function fPrice wurde aufgerufen');
+    return endPrice
+}
 
+function fViewPrice         ( endPrice ){
+    console.log     ('Eingegebene Länge: ' + lange.value + ' cm');
+    console.log     ('Eingegebene Breite: ' + breite.value + ' cm');
 
+            alert   (endPrice) ;
 
-	}
-};
+    console.log     ('die Function fViewPrice wurde aufgerufen');
+
+}
