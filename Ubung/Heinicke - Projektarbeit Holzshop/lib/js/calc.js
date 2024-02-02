@@ -1,3 +1,47 @@
+//#region constanten
+
+
+
+//#endregion
+
+
+function fProgrammAblauf() {
+
+    // fCalcQuad();
+    if (fCalcQuad() == NaN || fCalcQuad() == ''){
+        console.log('Die Function fCalcQuad ist fehlgeschlagen')
+    } else {
+        console.log('Die Function fCalcQuad wurde berechnet');
+        fBasisPrice();
+        if( fBasisPrice() == NaN || fBasisPrice() == '' ){
+            console.log('Die Function fBasisPrice ist fehlgeschlagen');
+        } else {
+            console.log('Die Function fBasisPreis wurde berechnet');
+            fAdditionalPrice();
+            if ( fAdditionalPrice() == NaN || fAdditionalPrice() == '' ){
+                console.log('Die Function fAdditionalPrice ist fehlgeschlagen');
+            } else {
+                console.log('Die Function fAdditionalPrice wurde berechnet');
+                fVariantPrice();
+                if     ( fVariantPrice() == NaN || fVariantPrice() == '' ){
+                    console.log('Die Function fVariantPrice ist fehlgeschlagen');
+                } else {
+                    console.log('Die Function fVariantPrice wurde berechnet');
+                    fPrice();
+                    if  ( fPrice() == NaN || fPrice() == '' ){
+                        console.log('Die Function fPrice ist fehlgeschlagen');
+                        } else {
+                            console.log('Die Function fPrice wurde berechnet');
+                            fViewPrice;
+                        }
+                    
+                }
+            }
+        }
+    }
+}
+
+
 function fCalcQuad          ( ){
 
 let l = lange.value * 0.1 ;
@@ -61,6 +105,7 @@ function fPrice             ( basePrice , addCosts , varPrice){
 function fViewPrice         ( endPrice ){
     console.log     ('Eingegebene Länge: ' + lange.value + ' cm');
     console.log     ('Eingegebene Breite: ' + breite.value + ' cm');
+    console.log     ('Errechnete Fläche: ' + q + ' m²');
 
             alert   (endPrice) ;
 

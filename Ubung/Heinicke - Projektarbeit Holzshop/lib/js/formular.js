@@ -34,20 +34,19 @@ function validate(event){                                                       
 
   meldungenLeeren();
   let error = breiteerr = langeerr = false ;
+
   let breiteerrmsg      =  ""   ;
   let langeerrmsg       =  ""   ;
 
-/* 1. Kontrolle der Breite */
-if( breite.value.trim() === "" ) {
+  /* 1. Kontrolle der Breite */
+  if( breite.value.trim() === "" ) {
   breiteerr             = true;
   breiteerrmsg          = "Das Feld darf nicht leer sein!";
-} else if( breite.value > 180 ) {
+  } else if( breite.value > 180 ) {
   breiteerr             = true;
   breiteerrmsg          = "Die eingegebene Breite darf 180 nicht überschreiten";
-}
-
-  
-if( breiteerr ) {                                             // Reaktion auf die Prüfung
+  }
+  if( breiteerr ) {                                             // Reaktion auf die Prüfung
 
     breite.classList                .remove       ("is-valid");
     breite.classList                .add          ("is-invalid");
@@ -56,25 +55,23 @@ if( breiteerr ) {                                             // Reaktion auf di
 /*  breiteHelp.innerHTML = breiteerrmsg; */
     breite                          .focus();
     error = true;
-} else {
+  } else {
 
     breite.classList                .remove    ("is-invalid");
     breite.classList                .add       ("is-valid");
     breite.classList                .remove    ("invalid-feedback");
 /*  breiteHelp.classList            .add       ("valid-feedback"); */
 /*  breiteHelp.innerHTML = "Die Breite ist korrekt!"; */
-}
-
-/* 2. Kontrolle der Längen Eingabe  */
-if( lange.value.trim()              === "" ) {
+  }
+  /* 2. Kontrolle der Längen Eingabe  */
+  if( lange.value.trim()              === "" ) {
     langeerr                            = true;
     langeerrmsg         = "Das Feld Länge darf nicht leer sein!";
-} else if( lange.value.value > 450 ) {
+  } else if( lange.value.value > 450 ) {
     langeerr                            = true;
     langeerrmsg         = "Die Länge darf nicht größer als 450 betragen";
-}
-
-if( langeerr ) {                                              // Reaktion auf die Prüfung lange
+  }
+  if( langeerr ) {                                              // Reaktion auf die Prüfung lange
 
     lange.classList                     .remove ("is-valid");
     lange.classList                     .add    ("is-invalid");
@@ -83,30 +80,22 @@ if( langeerr ) {                                              // Reaktion auf di
 /*  langeHelp.innerHTML = langeerrmsg ; */
     lange                               .focus();
     error = true;
-} else {
+  } else {
 
     lange.classList                     .remove     ("is-invalid");
     lange.classList                     .add        ("is-valid");
     lange.classList                     .remove     ("invalid-feedback");
 /*  langeHelp.classList                 .add        ("valid-feedback"); */
 /*  langeHelp.innerHTML = "Die eingegebene Länge ist korrekt!"; */
-}
-if( error ){
+  }
+  if( error ){
   alert("Die Eingabe ist nicht korrekt");
   console.log(error)
   
   event                         .preventDefault();
-}else{
-  /* f.action            = "https://test.jaderbass.de/formtester.php" ; */          //wir setzen zum versenden die Attribute
-  /* f.method            = "post" ; */                                              //wir wenden die post methode an
-  /* f.submit(); */                                                                 //wir senden es ab mit submit
-  
-
-  
-  fCalcQuad();
-  fViewPrice();
-  
-}
+  }else{
+    fProgrammAblauf();
+  }
 
 }
 document.addEventListener("DOMContentLoaded", init);                            // DOM schützen
