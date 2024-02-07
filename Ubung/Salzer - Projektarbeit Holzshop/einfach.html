@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tischplatte</title>
+</head>
+<body>
+
+<!-- Eingabefelder ohne Formular, alle mit ID= weil das am einfachsten ist -->
+<div class=form>
+
+    <p><select name="thickness" id="thickness">  <!-- einfacher als radio-button -->
+        <option value="1" selected>vollmassiv</option>
+        <option value="2">gedoppelt (optisch statt preislich)</option>
+    </select>
+
+    <p><select name="format" id="format">
+        <option>Gerade Kante</option>
+        <option>FacettenKante</option>
+        <option class="width-equals-length">Rund</option>
+        <option>Flechtmuster</option>
+        <option>Rautenmuster</option>
+    </select>
+
+    <p><select name="crackiness" id="crackiness">
+        <option value="0">Normaler RissAnteil</option>
+        <option value="1">Leichter RissAnteil</option>
+    </select>
+
+    <p><input type="checkbox" name="purebeams" id="purebeams" value="1" style="width: 2em"> Reine Außenbalken
+
+    <p><select name="finish" id="finish">
+        <option value="0">Mattlack</option>
+        <option value="0">Hartöl</option>
+        <option value="1">Äste/Risse verfüllen</option>
+         <!-- nur dieser Wert signifikant, daher value="1" -->
+    </select>
+
+    <p><input type="number" name="width" id="width" value="120" min="10" max="180"> cm
+    
+    <p><input type="number" name="length" id="length" value="90" min="10" max="450"> cm
+
+    <p><select name="strength" id="strength" data-thickness="1">
+        <option value=25 class=thickness-1-only>2.5</option>
+        <option value=30 class=thickness-1-only>3.0</option>
+        <option value=40>4.0</option>
+        <option value=50>5.0</option>
+        <option value=60>6.0</option>
+        <option value=70>7.0</option>
+        <!-- ... -->
+    </select> cm
+
+    <p><button id="calc">Berechnen</button>
+    
+    <p id="output">...</p>
+</div>
+
+
+<!-- separate Datei src=... -->
+<script>
+
+
+// Abkürzungen wie in Developer Consoler ("poor mans jquery")
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+
+
+// Auslesen direkt in ein Objekt/Array, weil dann weniger Variablen rumstreuseln.
+function get_fields() {
+    // Man beachte die Namensähnlichkeit zwischen input-Feldern und Attributen hier.
+    let desky = {
+        thickness: parseInt($("#thickness").value),  // 1 oder 2
+        format: $("#format").value,                  // unbenutzt
+        //color: $("#color").value,                  // unbenutzt
+        crackiness: $("#crackiness").value,          // unbenutzt
+        purebeams: $("#purebeams").checked,          // abweichend von anderen input-typen!
+        finish: $("#finish").value,                  // "0" oder "1"
+        width: parseFloat($("#width").value),        // 10-180
+        length: parseFloat($("#length").value),      // 10-450
+        strength: parseFloat($("#strength").value),  // 25, 30, 40, 50, ..., 120
+    }
+    console.log(desky);
+    return desky;
+}
+
+
+// Validieren + ggf. Fehlermeldungen
+function validate_input(desky) {
+    if (desky.length > 450) {
+        alert("Näh");
+        // oder $("output.length").innerHTML = "...";
+    }
+    // ...
+}
+
+
+// Berechnen
+function calc_desk(desky) {
+    // Tabelle für Basis-Preise, bei Plattenstärke==1
+    const base_price_1 = {
+        25: 300.00,
+        30: 360.00,
+        40: 420.00,
+        50: 480.00,
+        60: 560.00,
+        70: 640.00,
+        80: 720.00,
+        90: 800.00,
+        100: 880.00,
+        110: 960.00,
+        120: 1040.00,
+    };
+    
+    // Meter aus /100cm
+    let area = desky.width / 100 * desky.length / 100;
+ 
+    // Noch einfacher wär eine zweite/verschachtelte Liste für thickness==2,
+    let price = base_price_1[desky.strength] * area;
+    
+    // aber man kanns auch ausrechnen...
+    if (desky.thickness == 2) {
+        price *= 0.75;   // -25%;
+    }
+
+    // optionen
+    if (desky.purebeams) {
+        price += area * 47.60;   // Seitenbalken
+    }
+    if (desky.finish == "1") {
+        price += area * 71.40;   // Risse füllen
+    }
+    if (area < 1.0) {
+        price *= 1.05;   // +5% weil Mindermenge
+    }
+
+    return price;
+}
+
+
+// DOM-Events
+document.addEventListener("DOMContentLoaded", ready_set_go => {
+
+    // Button binden
+    $("#calc").addEventListener("click", click_event => {
+
+        // tisch-attr holen
+        let DeskyMcDeskFace = get_fields();
+
+        // optional?
+        let ok = validate_input(DeskyMcDeskFace);
+        
+        // calc+write
+        let price = calc_desk(DeskyMcDeskFace);
+        $("#output").innerHTML = "Unser Preis: " + price.toFixed(2) + "€";
+
+    });
+    
+});
+
+</script>
